@@ -4,6 +4,8 @@
 //
 // based on a keyboard map from an 'xkb/symbols/br' file
 
+//sudo cp /doks/Fichiers/Geek/br101/br101 /usr/share/X11/xkb/symbols && kbtxt
+
 // Text layout inspired from br(abnt2), for 101-key keyboards
 default
 xkb_symbols "txt" {
@@ -11,59 +13,60 @@ xkb_symbols "txt" {
 
     key <TLDE>	{ [  quotedbl,   percent,   asciitilde,    asciitilde ]	};
 
-    key <AE01>	{ [     1,    underscore,  onesuperior,    exclamdown ]	};
-    key <AE02>	{ [     2,          plus,  twosuperior,       onehalf ]	};
-    key <AE03>	{ [     3,    numbersign,threesuperior, threequarters ]	};
-    key <AE04>	{ [     4,     backslash,     EuroSign,    onequarter ]	};
-    key <AE05>	{ [     5,     braceleft,         cent,  threeeighths ]	};
-    key <AE06>	{ [     6,    braceright,       circle,       notsign ]	};
-    key <AE07>	{ [     7,     ampersand,    plusminus,  seveneighths ]	};
-    key <AE08>	{ [     8,      asterisk,     division,      infinity ]	};
-    key <AE09>	{ [     9,         equal,    0x1002248,      notequal ]	}; //≈
-    key <AE10>	{ [     0,dead_diaeresis,       degree,        oslash ]	};
-    key <AE11>	{ [dead_acute,dead_grave,        acute,         grave ]	};
-    key <AE12>	{ [dead_tilde, dead_circumflex,asciitilde,asciicircum ]	};
+    key <AE01>	{ [     1,    underscore,  onesuperior,    exclamdown ]	};// ¹ ¡
+    key <AE02>	{ [     2,          plus,  twosuperior,       onehalf ]	};// ² ½
+    key <AE03>	{ [     3,    numbersign,threesuperior, threequarters ]	};// ³ ¾
+    key <AE04>	{ [     4,     backslash,     EuroSign,    onequarter ]	};// € ¼
+    key <AE05>	{ [     5,     braceleft,    0x10025a1,  threeeighths ]	};// □ ⅜
+    key <AE06>	{ [     6,    braceright,       circle,       notsign ]	};// ○ ¬
+    key <AE07>	{ [     7,     ampersand,    plusminus,  seveneighths ]	};// ± ⅞
+    key <AE08>	{ [     8,      asterisk,     division,      infinity ]	};// ÷ ∞
+    key <AE09>	{ [     9,         equal,    0x1002248,      notequal ]	};// ≈ ≠
+    key <AE10>	{ [     0,dead_diaeresis,       degree,        oslash ]	};// ° ø
+    key <AE11>	{ [dead_acute,dead_grave,        acute,         grave ]	};// ´ `
+    key <AE12>	{ [dead_tilde,dead_circumflex, asciitilde,asciicircum ]	};// ~ ^
 
-    key <AD01>	{ [         q,         Q,        slash,         slash ]	};   
-    key <AD02>	{ [         w,         W,     question,      question ]	};   
-    key <AD03>	{ [         e,         E,       eacute,        egrave ]	};
-    key <AD04>	{ [         r,         R,  ecircumflex,    ediaeresis ]	};
-    key <AD05>	{ [         t,         T,      section,     trademark ]	};
-    key <AD06>	{ [         y,         Y,          yen,     variation ]	};
-    key <AD07>	{ [         u,         U,       uacute,        ugrave ]	};
-    key <AD08>	{ [         i,         I,       iacute,        igrave ]	};
-    key <AD09>	{ [         o,         O,       oacute,        ograve ]	};
-    key <AD10>	{ [         p,         P,       otilde,   ocircumflex ]	};
-    key <AD11>	{ [ parenleft,    agrave,  bracketleft ]	};
-    key <AD12>	{ [parenright,    egrave, bracketright ]	};
+    key <AD01>	{ [         q,   Q,       0x1007067,        0x10000b6 ]	};// 灧 ¶
+    key <AD02>	{ [         w,   W,          egrave,       ediaeresis ]	};// è ë
+    key <AD03>	{ [         e,   E,          eacute,    Greek_epsilon ]	};// é ε
+    key <AD04>	{ [         r,   R,     ecircumflex,       registered ]	};// ê ®
+    key <AD05>	{ [         t,   T,      dead_caron,        trademark ]	};// ˇ ™
+    key <AD06>	{ [         y,   Y,   dead_abovedot,    dead_belowdot ]	};// ˙ ạẹịọụṛḅṇṃṿẉẓ
+    key <AD07>	{ [         u,   U,     ocircumflex,      dead_stroke ]	};// ô łɨø
+    key <AD08>	{ [         i,   I,          oacute,              yen ]	};// ó ¥
+    key <AD09>	{ [         o,   O,          otilde,               oe ]	};// õ œ
+    key <AD10>	{ [         p,   P,          uacute,      ucircumflex ]	};// ú û
+    key <AD11>	{ [ parenleft,  bracketleft, 0x10025c1,     0x10025b3 ]	};// ◁ △
+    key <AD12>	{ [parenright, bracketright, 0x10025b7,     0x10025bd ]	};// ▷ ▽
 
-    key <AC01>	{ [         a,         A,       aacute,        agrave ]	};
-    key <AC02>	{ [         s,         S,       atilde,   acircumflex ]	};
-    key <AC03>	{ [         d,         D,dead_diaeresis,dead_abovering]	};
-    key <AC04>	{ [         f,         F,   dead_caron,   dead_macron ]	};
-    key <AC05>	{ [         g,         G,           ae,            AE ]	};
-    key <AC06>	{ [         h,         H,           oe,            OE ]	};
-    key <AC07>	{ [         j,         J,  ucircumflex,    udiaeresis ]	};
-    key <AC08>	{ [         k,         K,   idiaeresis,   icircumflex ]	};
-    key <AC09>	{ [         l,         L, dead_acute,dead_doubleacute ]	};
-    key <AC10>	{ [     minus,    exclam,     ccedilla,      Ccedilla ]	};
-    key <AC11>	{ [     colon,    dollar,     multiply,     0x1002715 ]	}; //✕
-    key <BKSL>	{ [ semicolon,        at,    0x1002026,     0x1002713 ]	}; // … checkmark✓
+    key <AC01>	{ [         a,   A,          atilde,               ae ]	};
+    key <AC02>	{ [         s,   S,          agrave,          section ]	};// à §
+    key <AC03>	{ [         d,   D,          aacute,      Greek_delta ]	};// á δ
+    key <AC04>	{ [         f,   F,     acircumflex,        variation ]	};// â ∝
+    key <AC05>	{ [         g,   G,    dead_cedilla,        dead_horn ]	};// ¸ ̛ ơư
+    key <AC06>	{ [         h,   H,     dead_macron, dead_belowmacron ]	};// ¯ ̱
+    key <AC07>	{ [         j,   J,     icircumflex,   dead_belowring ]	};// î ḁ  
+    key <AC08>	{ [         k,   K,          iacute ]	};
+    key <AC09>	{ [         l,   L,          ugrave,       udiaeresis ]	};
+    key <AC10>	{ [     minus,  exclam,    ccedilla,         Ccedilla ]	};
+    key <AC11>	{ [     colon,  dollar,    multiply,        0x1002715 ]	};// × ✕
+    key <BKSL>	{ [ semicolon,      at,   0x1002026,        0x1002713 ]	};// … ✓
 
-    key <LSGT>	{ [apostrophe,bar,    lessthanequal, greaterthanequal ]	};
-    key <AB01>	{ [         z,  Z,        guillemotleft,  ordfeminine ]	};
-    key <AB02>	{ [         x,  X,       guillemotright,    masculine ]	};
-    key <AB03>	{ [         c,  C,            copyright,   registered ]	};          
-    key <AB04>	{ [         v,  V,  leftdoublequotemark,    leftarrow ]	};
-    key <AB05>	{ [         b,  B, rightdoublequotemark,   rightarrow ]	};
-    key <AB06>	{ [         n,  N,               ntilde,    0x1002116 ]	}; // №
-    key <AB07>	{ [         m,  M,                   mu,    0x10000b6 ]	}; // ¶
-    key <AB08>	{ [     comma,     less, horizconnector,      uparrow ]	};
-    key <AB09>	{ [    period,  greater, periodcentered,    downarrow ]	};
-    key <AB10>	{ [     slash, question,   questiondown,    0x1007067 ]	}; // 灧
+    key <LSGT>	{ [apostrophe, bar,  lessthanequal,  greaterthanequal ]	};
+    key <AB01>	{ [         z,   Z,  guillemotleft,       ordfeminine ]	};// « ª
+    key <AB02>	{ [         x,   X, guillemotright,         masculine ]	};// » º
+    key <AB03>	{ [         c,   C, dead_abovering,         copyright ]	};//   ©          
+    key <AB04>	{ [         v,   V, dead_diaeresis,leftdoublequotemark]	};// ¨ “
+    key <AB05>	{ [         b, B,dead_doubleacute,rightdoublequotemark]	};// ˝ ”
+    key <AB06>	{ [         n,   N,         ntilde,         0x1002116 ]	};// ñ №
+    key <AB07>	{ [         m,   M,             mu,         downarrow ]	};// µ ↓
+    key <AB08>	{ [     comma,      less, horizconnector,   leftarrow ]	};// ─ ←
+    key <AB09>	{ [    period,   greater, periodcentered,  rightarrow ]	};// · →
+    key <AB10>	{ [     slash,  question,   questiondown,     uparrow ]	};// ¿ ↑
 
     // ABNT-2 keyboard has this special key
     key <AB11>	{ [     slash,   question,       degree, questiondown ]	};
+    //key <AB11>	{ [  quotedbl,   asciitilde ]	};
 
     include "kpdl(dot)"
 
@@ -77,6 +80,10 @@ xkb_symbols "txt" {
         symbols[Group1] =
             [ ISO_Level3_Shift ] };
     modifier_map Mod5   { ISO_Level3_Shift };
+//http://www.xfree86.org/current/XKB-Enhancing4.html
+// key <RALT>  { type[Group1]="TWO_LEVEL",
+//                [ ISO_Level3_Shift, Multi_key ]   };
+//  modifier_map Mod5   { <RALT> };
 };
 
 
@@ -99,8 +106,8 @@ xkb_symbols "dev" {
     key <AE11>	{ [ 1,       grave, dead_acute, dead_grave      ]	};
     key <AE12>	{ [ 2, asciicircum, dead_tilde, dead_circumflex ]	};
 
-    key <AD11>	{ [   parenleft,  bracketleft ]	};
-    key <AD12>	{ [  parenright, bracketright ]	};
+//  key <AD11>	{ [   parenleft,  bracketleft ]	};
+//  key <AD12>	{ [  parenright, bracketright ]	};
 
 //  key <AC10>	{ [       minus,     exclam ]	};
 //  key <AC11>	{ [       colon,     dollar ]	};
