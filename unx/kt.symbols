@@ -4,14 +4,12 @@
 //
 // based on a keyboard map from an 'xkb/symbols/br' file
 
-//sudo cp /doks/Fichiers/Geek/br101/br101 /usr/share/X11/xkb/symbols && kbtxt
-
 // Text layout inspired from br(abnt2), for 101-key keyboards
 default
 xkb_symbols "txt" {
     name[Group1]="Brazil";
 
-    key <TLDE>	{ [  quotedbl,   percent,   asciitilde,    asciitilde ]	};
+    key <TLDE>	{ [  quotedbl,   percent,   asciitilde,    apostrophe ]	};// ~ '
 
     key <AE01>	{ [     1,    dead_acute,  onesuperior,    exclamdown ]	};// ¹ ¡
     key <AE02>	{ [     2,    dead_tilde,  twosuperior,       onehalf ]	};// ² ½
@@ -27,37 +25,37 @@ xkb_symbols "txt" {
     key <AE12>	{ [    plus,dead_circumflex, asciitilde,asciicircum ]	};// ~ ^
 
     key <AD01>	{ [         q,   Q,       0x1007067,        0x10000b6 ]	};// 灧 ¶
-    key <AD02>	{ [         w,   W,          egrave,    Greek_epsilon ]	};// è ε
-    key <AD03>	{ [         e,   E,          eacute,       ediaeresis ]	};// é ë
+    key <AD02>	{ [         w,   W,          egrave,       ediaeresis ]	};// è ë
+    key <AD03>	{ [         e,   E,          eacute,    Greek_epsilon ]	};// é ε
     key <AD04>	{ [         r,   R,     ecircumflex,       registered ]	};// ê ®
     key <AD05>	{ [         t,   T,      dead_caron,        trademark ]	};// ˇ ™
-    key <AD06>	{ [         y,   Y,   dead_abovedot,    dead_belowdot ]	};// ˙  ạẹịọụṛḅṇṃṿẉẓ
+    key <AD06>	{ [         y,   Y,   dead_abovedot,    dead_belowdot ]	};// ˙ ạẹịọụṛḅṇṃṿẉẓ
     key <AD07>	{ [         u,   U,     ocircumflex, dead_doubleacute ]	};// ô ˝
     key <AD08>	{ [         i,   I,          oacute,              yen ]	};// ó ¥
     key <AD09>	{ [         o,   O,          otilde,               oe ]	};// õ œ
-    key <AD10>	{ [         p,   P,               p,      ordfeminine ]	};//   ª
+    key <AD10>	{ [         p,   P,               p,      ordfeminine ]	};// ú û
     key <AD11>	{ [ parenleft,  bracketleft, 0x10025c1,     0x10025b3 ]	};// ◁ △
     key <AD12>	{ [parenright, bracketright, 0x10025b7,     0x10025bd ]	};// ▷ ▽
 
-    key <AC01>	{ [         a,   A,          atilde,               ae ]	};// ã æ
+    key <AC01>	{ [         a,   A,          atilde,               ae ]	};
     key <AC02>	{ [         s,   S,          agrave,          section ]	};// à §
     key <AC03>	{ [         d,   D,          aacute,      Greek_delta ]	};// á δ
     key <AC04>	{ [         f,   F,     acircumflex,        variation ]	};// â ∝
-    key <AC05>	{ [         g,   G,    dead_cedilla,        dead_horn ]	};// ¸ ̛ ơư
-    key <AC06>	{ [         h,   H,     dead_macron, dead_belowmacron ]	};// ¯ ̱ ḻḇṉṯṟḵḏẖẕ
+    key <AC05>	{ [         g,   G,    dead_cedilla,   dead_diaeresis ]	};// ¸ ÿ
+    key <AC06>	{ [         h,   H,     dead_macron, dead_belowmacron ]	};// ¯ ̱
     key <AC07>	{ [         j,   J,     icircumflex,   dead_abovering ]	};// î ˚  
-    key <AC08>	{ [         k,   K,          iacute,       idiaeresis ]	};// í ï
-    key <AC09>	{ [         l,   L,               l,        masculine ]	};//   º
-    key <AC10>	{ [     minus,  exclam,    ccedilla,         Ccedilla ]	};// ç Ç
+    key <AC08>	{ [         k,   K,          iacute,       idiaeresis ]	};
+    key <AC09>	{ [         l,   L,               i,        masculine ]	};
+    key <AC10>	{ [     minus,  exclam,    ccedilla,         Ccedilla ]	};
     key <AC11>	{ [     colon,  dollar,    multiply,        0x1002715 ]	};// × ✕
     key <BKSL>	{ [ semicolon,      at,   0x1002026,        0x1002713 ]	};// … ✓
 
-    key <LSGT>	{ [apostrophe, bar,  lessthanequal,  greaterthanequal ]	};
-    key <AB01>	{ [         z,   Z,         ugrave,    dead_diaeresis ]	};// ù ¨
-    key <AB02>	{ [         x,   X,         uacute,        udiaeresis ]	};// ú ü
-    key <AB03>	{ [         c,   C,    ucircumflex,         copyright ]	};// û ©          
-    key <AB04>	{ [         v,   V,  guillemotleft,leftdoublequotemark]	};// « “
-    key <AB05>	{ [         b,   B,guillemotright,rightdoublequotemark]	};// » ”
+    key <LSGT>	{ [apostrophe, bar,  lessthanequal,  greaterthanequal ]	};// ≤ ≥
+    key <AB01>	{ [         z,   Z,            bar,leftdoublequotemark]	};// | “
+    key <AB02>	{ [         x,   X,         ugrave,        udiaeresis ]	};// ù ü
+    key <AB03>	{ [         c,   C,         uacute,         copyright ]	};// ú ©          
+    key <AB04>	{ [         v,   V,   ucircumflex,rightdoublequotemark]	};// û ”
+    key <AB05>	{ [         b,   B,  guillemotleft,    guillemotright ]	};// « »
     key <AB06>	{ [         n,   N,         ntilde,         0x1002116 ]	};// ñ №
     key <AB07>	{ [         m,   M,             mu,         downarrow ]	};// µ ↓
     key <AB08>	{ [     comma,      less, horizconnector,   leftarrow ]	};// ─ ←
