@@ -6,26 +6,35 @@
 
 // Text layout inspired from br(abnt2), for 101-key keyboards
 
-//TODO include compose(102)
+//TODO
+//1. accented_qwerty (from scratch)
+//2. new_numbers_top
+//3. new_numbers_bottom
+//4. new_symbols
+//5. us_numbers_bottom
+// kts = sym = 1+2+4 +compose(102)
+// ktn = num = 1+3+4 +c
+// uss = us  = 1+5+us+c
+// gbs = gb  = 1+5+gb+@+c
 
 default
 xkb_symbols "txt" {
     name[Group1]="Brazil";
 
-    key <TLDE>	{ [  quotedbl,   percent,   asciitilde,    apostrophe ]	};// ~ '
+    key <TLDE>	{ [quotedbl,  asciitilde,        grave,    dead_tilde ]	};// ` ~
 
     key <AE01>	{ [     1,    dead_acute,  onesuperior,    exclamdown ]	};// ¹ ¡
-    key <AE02>	{ [     2,    dead_tilde,  twosuperior,       onehalf ]	};// ² ½
+    key <AE02>	{ [     2,           bar,  twosuperior,       onehalf ]	};// ² ½
     key <AE03>	{ [     3,    numbersign,threesuperior, threequarters ]	};// ³ ¾
-    key <AE04>	{ [     4,     backslash,     EuroSign,    onequarter ]	};// € ¼
-    key <AE05>	{ [     5,     braceleft,    0x10025a1,  threeeighths ]	};// □ ⅜
-    key <AE06>	{ [     6,    braceright,       circle,       notsign ]	};// ○ ¬
-    key <AE07>	{ [     7,     ampersand,    plusminus,  seveneighths ]	};// ± ⅞
-    key <AE08>	{ [     8,    underscore,     division,      infinity ]	};// ÷ ∞
+    key <AE04>	{ [     4,     backslash,     EuroSign,       notsign ]	};// € ¼
+    key <AE05>	{ [     5,     braceleft,      percent,     0x10025a1 ]	};// % □
+    key <AE06>	{ [     6,    braceright,   underscore,        circle ]	};// ○ ¬
+    key <AE07>	{ [     7,    underscore,    ampersand,     plusminus ]	};// & ±
+    key <AE08>	{ [     8,          plus,     division,      infinity ]	};// ÷ ∞
     key <AE09>	{ [     9,         equal,    0x1002248,      notequal ]	};// ≈ ≠
-    key <AE10>	{ [     0,dead_diaeresis,       degree,        oslash ]	};// ° ø
-    key <AE11>	{ [asterisk,  dead_grave,        acute,         grave ]	};// ´ `
-    key <AE12>	{ [    plus,dead_circumflex, asciitilde,asciicircum ]	};// ~ ^
+    key <AE10>	{ [     0,             0,       degree,        oslash ]	};// ° ø
+    key <AE11>	{ [asterisk,       grave, dead_diaeresis,  dead_grave ]	};// ´ `
+    key <AE12>	{ [apostrophe,circumflex, dead_acute, dead_circumflex ]	};// ~ ^
 
     key <AD01>	{ [         q,   Q,       0x1007067,        0x10000b6 ]	};// 灧 ¶
     key <AD02>	{ [         w,   W,          egrave,       ediaeresis ]	};// è ë
@@ -95,17 +104,17 @@ xkb_symbols "dev" {
 //  key <TLDE>	{ [  quotedbl,        bar,      notsign,      notsign ] };
 
     key <AE01>	{ [           1, 1 ]	};
-    key <AE02>	{ [           2, 2 ]	};
+    key <AE02>	{ [         bar, 2 ]	};
     key <AE03>	{ [  numbersign, 3 ]	};
     key <AE04>	{ [   backslash, 4 ]	};
     key <AE05>	{ [   braceleft, 5 ]	};
     key <AE06>	{ [  braceright, 6 ]	};
     key <AE07>	{ [   ampersand, 7 ]	};
-    key <AE08>	{ [  underscore, 8 ]	};
+    key <AE08>	{ [        plus, 8 ]	};
     key <AE09>	{ [       equal, 9 ]	};
-    key <AE10>	{ [           0, 0 ]	};
-    key <AE11>	{ [    asterisk,       grave, dead_acute, dead_grave      ]	};
-    key <AE12>	{ [        plus, asciicircum, dead_tilde, dead_circumflex ]	};
+//    key <AE10>	{ [           0, 0 ]	};
+//    key <AE11>	{ [    asterisk,       grave, dead_acute, dead_grave      ]	};
+//    key <AE12>	{ [        plus, asciicircum, dead_tilde, dead_circumflex ]	};
 
 //  key <AD11>	{ [   parenleft,  bracketleft ]	};
 //  key <AD12>	{ [  parenright, bracketright ]	};

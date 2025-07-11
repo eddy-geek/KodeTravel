@@ -136,7 +136,9 @@ echo -e " folder: $WORKDIR\n layout: $LAYOUT \n moving file: $SRC to: $DSTSYMB \
 [ -n "$VERB" ] && set -o xtrace
 
 # Copy layout file
-sudo cp $SRC $DSTSYMB
+#sudo cp $SRC $DSTSYMB
+sudo ln -s $SRC $DSTSYMB
+#sudo ln -s $PWD/kt.symbols /usr/share/X11/xkb/symbols/kt
 
 # Append layout info at the end of the layout list
 grep -q "<name>$LAYOUT<" "$DXML" || (
