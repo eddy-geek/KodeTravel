@@ -5,6 +5,9 @@
 // based on a keyboard map from an 'xkb/symbols/br' file
 
 // Text layout inspired from br(abnt2), for 101-key keyboards
+
+//TODO include compose(102)
+
 default
 xkb_symbols "txt" {
     name[Group1]="Brazil";
@@ -87,7 +90,7 @@ xkb_symbols "txt" {
 
 // Development layout for 101-key keyboard
 xkb_symbols "dev" {
-    include "br101(txt)"
+    include "kt(txt)"
 
 //  key <TLDE>	{ [  quotedbl,        bar,      notsign,      notsign ] };
 
@@ -122,7 +125,7 @@ xkb_symbols "dev" {
 // Text layout for (brazilian) 102-key keyboard
 xkb_symbols "txt102" {
 
-    include "br101(txt)"
+    include "kt(txt)"
 
 //  key <AB09>	{ [    period,     exclam, periodcentered,  downarrow ]	};
     key <AB10>	{ [  quotedbl,   exclam, dead_belowdot, dead_abovedot ] };
@@ -135,7 +138,7 @@ xkb_symbols "txt102" {
 // Development layout for (brazilian) 102-key keyboard
 xkb_symbols "dev102" {
 
-    include "br101(dev)"
+    include "kt(dev)"
 
     //copy of key <TLDE>	
     key <AB10>	{ [ quotedbl, asciitilde, dead_belowdot, dead_abovedot]	};
