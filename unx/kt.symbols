@@ -18,71 +18,71 @@
 
 xkb_symbols "accented_qwerty" {
 
-    key <AD01>	{ [         q,   Q,       0x1007067,        0x10000b6 ]	};// 灧 ¶
-    key <AD02>	{ [         w,   W,          egrave,       ediaeresis ]	};// è ë
-    key <AD03>	{ [         e,   E,          eacute,    Greek_epsilon ]	};// é ε
-    key <AD04>	{ [         r,   R,     ecircumflex,       registered ]	};// ê ®
-    key <AD05>	{ [         t,   T,      dead_caron,        trademark ]	};// ˇ ™
-    key <AD06>	{ [         y,   Y,   dead_abovedot,    dead_belowdot ]	};// ˙ ạẹịọụṛḅṇṃṿẉẓ
-    key <AD07>	{ [         u,   U,     ocircumflex, dead_doubleacute ]	};// ô ˝
-    key <AD08>	{ [         i,   I,          oacute,              yen ]	};// ó ¥
-    key <AD09>	{ [         o,   O,          otilde,               oe ]	};// õ œ
-    key <AD10>	{ [         p,   P,               p,      ordfeminine ]	};// ú û
+    key <AD01>	{ [         q,   Q,       0x1007067,        0x10000b6 ]	};
+    key <AD02>	{ [         w,   W,          egrave,       ediaeresis ]	};
+    key <AD03>	{ [         e,   E,          eacute,    Greek_epsilon ]	};
+    key <AD04>	{ [         r,   R,     ecircumflex,       registered ]	};
+    key <AD05>	{ [         t,   T,      dead_caron,        trademark ]	};
+    key <AD06>	{ [         y,   Y,   dead_abovedot,    dead_belowdot ]	};
+    key <AD07>	{ [         u,   U,     ocircumflex, dead_doubleacute ]	};
+    key <AD08>	{ [         i,   I,          oacute,              yen ]	};
+    key <AD09>	{ [         o,   O,          otilde,               oe ]	};
+    key <AD10>	{ [         p,   P,               p,      ordfeminine ]	};
 
     key <AC01>	{ [         a,   A,          atilde,               ae ]	};
-    key <AC02>	{ [         s,   S,          agrave,          section ]	};// à §
-    key <AC03>	{ [         d,   D,          aacute,      Greek_delta ]	};// á δ
-    key <AC04>	{ [         f,   F,     acircumflex,        variation ]	};// â ∝
-    key <AC05>	{ [         g,   G,    dead_cedilla,   dead_diaeresis ]	};// ¸ ÿ
-    key <AC06>	{ [         h,   H,     dead_macron, dead_belowmacron ]	};// ¯ ̱
-    key <AC07>	{ [         j,   J,     icircumflex,   dead_abovering ]	};// î ˚
+    key <AC02>	{ [         s,   S,          agrave,          section ]	};
+    key <AC03>	{ [         d,   D,          aacute,      Greek_delta ]	};
+    key <AC04>	{ [         f,   F,     acircumflex,        variation ]	};
+    key <AC05>	{ [         g,   G,    dead_cedilla,   dead_diaeresis ]	};
+    key <AC06>	{ [         h,   H,     dead_macron, dead_belowmacron ]	};
+    key <AC07>	{ [         j,   J,     icircumflex,   dead_abovering ]	};
     key <AC08>	{ [         k,   K,          iacute,       idiaeresis ]	};
     key <AC09>	{ [         l,   L,               i,        masculine ]	};
 
-    key <AB01>	{ [         z,   Z,            bar,leftdoublequotemark]	};// | “
-    key <AB02>	{ [         x,   X,         ugrave,        udiaeresis ]	};// ù ü
-    key <AB03>	{ [         c,   C,         uacute,         copyright ]	};// ú ©
-    key <AB04>	{ [         v,   V,   ucircumflex,rightdoublequotemark]	};// û ”
-    key <AB05>	{ [         b,   B,  guillemotleft,    guillemotright ]	};// « »
-    key <AB06>	{ [         n,   N,         ntilde,         0x1002116 ]	};// ñ №
-    key <AB07>	{ [         m,   M,             mu,         downarrow ]	};// µ ↓
-    key <AB08>	{ [     comma,      less,       ccedilla,   leftarrow ]	};// ─ ←
-    key <AB09>	{ [    period,   greater, periodcentered,  rightarrow ]	};// · →
-    key <AB10>	{ [     slash,  question,   questiondown,     uparrow ]	};// ¿ ↑
+    key <AB01>	{ [         z,   Z,            bar,leftdoublequotemark]	};
+    key <AB02>	{ [         x,   X,         ugrave,        udiaeresis ]	};
+    key <AB03>	{ [         c,   C,         uacute,         copyright ]	};
+    key <AB04>	{ [         v,   V,   ucircumflex,rightdoublequotemark]	};
+    key <AB05>	{ [         b,   B,  guillemotleft,    guillemotright ]	};
+    key <AB06>	{ [         n,   N,         ntilde,         0x1002116 ]	};
+    key <AB07>	{ [         m,   M,             mu,         downarrow ]	};
+    key <AB08>	{ [     comma,      less,       ccedilla,   leftarrow ]	};
+    key <AB09>	{ [    period,   greater, periodcentered,  rightarrow ]	};
+    key <AB10>	{ [     slash,  question,   questiondown,     uparrow ]	};
 };
 
 
 xkb_symbols "right_symbols" {
 
-    key <TLDE>	{ [  quotedbl,    asciitilde,    dead_grave,   dead_tilde ]	};// ` ~
+    key <TLDE>	{ [  quotedbl,    asciitilde,    dead_grave,   dead_tilde ]	};
 
-    key <AE11>	{ [     minus,         grave,dead_diaeresis,   dead_grave ]	};// ´ `
-    key <AE12>	{ [ semicolon,   asciicircum,   dead_acute,dead_circumflex]	};// ~ ^
+    key <AE11>	{ [     minus,         grave,dead_diaeresis,   dead_grave ]	};
+    key <AE12>	{ [ semicolon,   asciicircum,   dead_acute,dead_circumflex]	};
 
 
-    key <AD11>	{ [ parenleft,     braceleft,     0x10025c1,    0x10025b3 ]	};// ◁ △
-    key <AD12>	{ [parenright,    braceright,     0x10025b7,    0x10025bd ]	};// ▷ ▽
+    key <AD11>	{ [ parenleft,     braceleft,     0x10025c1,    0x10025b3 ]	};
+    key <AD12>	{ [parenright,    braceright,     0x10025b7,    0x10025bd ]	};
 
     key <AC10>	{ [     colon,        exclam,      ccedilla,     Ccedilla ]	};
-    key <AC11>	{ [apostrophe,        dollar,      multiply,    0x1002715 ]	};// × ✕
-    key <BKSL>	{ [  quotedbl,dead_diaeresis,     0x1002026,    0x1002713 ]	};// … ✓
+    key <AC11>	{ [apostrophe,        dollar,      multiply,    0x1002715 ]	};
+    key <BKSL>	{ [ backslash,dead_diaeresis,     0x1002026,    0x1002713 ]	};
 
 };
 
 // xkb_symbols "right_symbols" {
 //
-//     key <TLDE>	{ [quotedbl,  asciitilde,        grave,    dead_tilde ]	};// ` ~
+//     key <TLDE>	{ [quotedbl,  asciitilde,        grave,    dead_tilde ]	};
 //
-//     key <AE11>	{ [ minus,           grave, dead_diaeresis,  dead_grave ]	};// ´ `
-//     key <AE12>	{ [ semicolon, asciicircum, dead_acute, dead_circumflex ]	};// ~ ^
+//     key <AE11>	{ [ minus,           grave, dead_diaeresis,  dead_grave ]	};
+//     key <AE12>	{ [ semicolon, asciicircum, dead_acute, dead_circumflex ]	};
 //
 //
-//     key <AD11>	{ [ parenleft,  braceleft, 0x10025c1,       0x10025b3 ]	};// ◁ △
-//     key <AD12>	{ [parenright, braceright, 0x10025b7,       0x10025bd ]	};// ▷ ▽
+//     key <AD11>	{ [ parenleft,  braceleft, 0x10025c1,       0x10025b3 ]	};
+//     key <AD12>	{ [parenright, braceright, 0x10025b7,       0x10025bd ]	};
 //
 //     key <AC10>	{ [     colon,  exclam,    ccedilla,         Ccedilla ]	};
-//     key <AC11>	{ [apostrophe,  dollar,    multiply,        0x1002715 ]	};// × ✕
-//     key <BKSL>	{ [ semicolon,      at,   0x1002026,        0x1002713 ]	};// … ✓
+//     key <AC11>	{ [apostrophe,  dollar,    multiply,        0x1002715 ]	};
+//     key <BKSL>	{ [ semicolon,      at,   0x1002026,        0x1002713 ]	};
 //
 // };
 
@@ -111,16 +111,16 @@ xkb_symbols "right_symbols_us" {
 
 xkb_symbols "toprow" {
 
-    key <AE01>	{ [ NoSymbol, NoSymbol,  onesuperior,    exclamdown ]	};// ¹ ¡
-    key <AE02>	{ [ NoSymbol, NoSymbol,           at,   twosuperior ]};//,       onehalf ]	};// ² ½
-    key <AE03>	{ [ NoSymbol, NoSymbol,threesuperior, threequarters ]	};// ³ ¾
-    key <AE04>	{ [ NoSymbol, NoSymbol,     EuroSign,       notsign ]	};// € ¼
-    key <AE05>	{ [ NoSymbol, NoSymbol,      percent,     0x10025a1 ]	};// % □
-    key <AE06>	{ [ NoSymbol, NoSymbol,          bar,        circle ]	};// ○ ¬
-    key <AE07>	{ [ NoSymbol, NoSymbol,    ampersand,     plusminus ]	};// & ±
-    key <AE08>	{ [ NoSymbol, NoSymbol,     division,      infinity ]	};// ÷ ∞
-    key <AE09>	{ [ NoSymbol, NoSymbol,    0x1002248,      notequal ]	};// ≈ ≠
-    key <AE10>	{ [ NoSymbol, NoSymbol,       degree,        oslash ]	};// ° ø
+    key <AE01>	{ [ NoSymbol, NoSymbol,  onesuperior,    exclamdown ]	};
+    key <AE02>	{ [ NoSymbol, NoSymbol,    backslash,   twosuperior ]};
+    key <AE03>	{ [ NoSymbol, NoSymbol,threesuperior, threequarters ]	};
+    key <AE04>	{ [ NoSymbol, NoSymbol,     EuroSign,       notsign ]	};
+    key <AE05>	{ [ NoSymbol, NoSymbol,      percent,     0x10025a1 ]	};
+    key <AE06>	{ [ NoSymbol, NoSymbol,          bar,        circle ]	};
+    key <AE07>	{ [ NoSymbol, NoSymbol,    ampersand,     plusminus ]	};
+    key <AE08>	{ [ NoSymbol, NoSymbol,     division,      infinity ]	};
+    key <AE09>	{ [ NoSymbol, NoSymbol,    0x1002248,      notequal ]	};
+    key <AE10>	{ [ NoSymbol, NoSymbol,       degree,        oslash ]	};
 };
 
 xkb_symbols "toprow_numbers" {
@@ -143,9 +143,9 @@ xkb_symbols "toprow_symbols" {
 
     include "kt(toprow)"
     key <AE01>	{ [           1, 1 ]	};
-    key <AE02>	{ [  underscore, 2 ]	};
+    key <AE02>	{ [  at, 2 ]	};
     key <AE03>	{ [  numbersign, 3 ]	};
-    key <AE04>	{ [   backslash, 4 ]	};
+    key <AE04>	{ [   underscore, 4 ]	};
     key <AE05>	{ [ bracketleft, 5 ]	};
     key <AE06>	{ [bracketright, 6 ]	};
     key <AE07>	{ [       plus, 7 ]	};
@@ -176,7 +176,7 @@ xkb_symbols "101_key" {
 
 xkb_symbols "other" {
 
-//    key <LSGT>	{ [apostrophe, bar,  lessthanequal,  greaterthanequal ]	};// ≤ ≥
+//    key <LSGT>	{ [apostrophe, bar,  lessthanequal,  greaterthanequal ]	};
 
 
     //include "compose(102)"  # Equivalent to:
@@ -195,14 +195,14 @@ xkb_symbols "other" {
 //    modifier_map Mod5   { ISO_Level3_Shift };
 //http://www.xfree86.org/current/XKB-Enhancing4.html
 
-    key <RALT> {
-      type[Group1]="TWO_LEVEL",
-      // Stops xkbcomp's complaints about multiple symbols.
-      //type[Group2]="TWO_LEVEL",
-      //type[Group3]="TWO_LEVEL",
-      //type[Group4]="TWO_LEVEL",
-      [ ISO_Level3_Shift, Multi_key ]   };
-    modifier_map Mod5   { <RALT> };
+////    key <RALT> {
+////      type[Group1]="TWO_LEVEL",
+////      // Stops xkbcomp's complaints about multiple symbols.
+////      //type[Group2]="TWO_LEVEL",
+////      //type[Group3]="TWO_LEVEL",
+////      //type[Group4]="TWO_LEVEL",
+////      [ ISO_Level3_Shift, Multi_key ]   };
+////    modifier_map Mod5   { <RALT> };
 };
 
 xkb_symbols "num" {
@@ -218,13 +218,19 @@ xkb_symbols "num" {
 // Development layout for 101-key keyboard
 default
 xkb_symbols "dev" {
+    name[Group1]="Brazil";
     include "kt(accented_qwerty)"
     include "kt(toprow_symbols)"
     include "kt(right_symbols)"
     include "kt(other)"
 
-//  key <TLDE>	{ [  quotedbl,        bar,      notsign,      notsign ] };
+    key <LSGT>	{ type[Group1]="FOUR_LEVEL", [backslash,  plusminus, lessthanequal,  greaterthanequal ]	};
 
+    // .. and on LG Gram 16T90R this br/jp key is right control
+    // replace 
+    key <AB11> { [ Control_R, Control_R ] };
+
+//    key <TLDE>	{ [  quotedbl,        bar,      notsign,      notsign ] };
 
 //    key <AE10>	{ [           0, 0 ]	};
 //    key <AE11>	{ [    asterisk,       grave, dead_acute, dead_grave      ]	};
@@ -253,7 +259,7 @@ xkb_symbols "num102" {
 //  key <AB09>	{ [    period,     exclam, periodcentered,  downarrow ]	};
     key <AB10>	{ [  quotedbl,   exclam, dead_belowdot, dead_abovedot ] };
     // ABNT-2 keyboard has this special key
-    key <AB11>	{ [     slash, question,  questiondown,     0x1007067 ]	}; // 灧
+    key <AB11>	{ [     slash, question,  questiondown,     0x1007067 ]	};
 
 };
 
@@ -266,7 +272,7 @@ xkb_symbols "dev102" {
     //copy of key <TLDE>	
     key <AB10>	{ [ quotedbl, asciitilde, dead_belowdot, dead_abovedot]	};
     // ABNT-2 keyboard has this special key
-    key <AB11>	{ [    slash,   question,  questiondown,    0x1007067 ]	}; // 灧
+    key <AB11>	{ [    slash,   question,  questiondown,    0x1007067 ]	};
 
 };
 
@@ -285,7 +291,7 @@ xkb_symbols "us_nicer" {
     include "kt(dev)"      // accents, altgr symbols
     include "us(base)"     // make symbols right
 
-    key <TLDE> {	[	quotedbl	  ,asciitilde, grave, dead_tilde ]	};// ` ~
+    key <TLDE> {	[	quotedbl	  ,asciitilde, grave, dead_tilde ]	};
     key <AC11> {	[	apostrophe	  ,grave        ]       };
     
     key <AE01> {	[	1 		  ,1		]	};
@@ -327,17 +333,3 @@ xkb_symbols "abnt2_mini" {
     include "kpdl(dot)"
 
 };
-
-//Some nice kanjis
-//Unicode nbt  English     Japonese-On      Japonese-Kun
-//66B6
-//704B 灋 (25) law         hou hatsu hotsu  nori
-//7059 灋 (28)
-//7067 灧 (31) overflowing en               nami
-//77D7 矗 (27) straight    chiku shuku chuu naoi
-//862F 蘯 (25) to swing    toudou
-
-// "1=#\[]_*+0-;  ()  :'  ,./  `z
-// ~1234567890`^  {}  !$  <>?  |Z
-// `¹@³€%^&÷≈°"' ◁▷  ç×  ─·¿  ^|
-//
