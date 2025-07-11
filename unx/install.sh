@@ -125,6 +125,98 @@ case "$1" in
 	*)          kbdev ;;
 esac
 
+cd "$(dirname $0)"
+WORKDIR="$PWD"
+
+VERB=''
+MNT=''
+
+LAYOUT='kt'
+VMAIN='dev'
+
+SRC="$WORKDIR/$LAYOUT.symbols"
+
+while getopts "hvs:d:m:" opt; do
+  case $opt in
+#    s)
+#      echo "Source Layout file: $OPTARG" >&2
+#      SRC="$OPTARG"
+#      ;;
+#    d)
+#      echo "Dropbox directory: $OPTARG" >&2
+#      SRC="$OPTARG/Dropbox/Geek/$LAYOUT/$LAYOUT"
+#      ;;
+    m)
+      echo "Mount point: $OPTARG" >&2
+      MNT="$OPTARG"
+      ;;
+    v)
+      echo "Debug enabled" >&2
+      VERB='y'
+      ;;
+    h)
+      echo "Usage: '$0 [-m dest_mount_point]'" >&2
+      exit 1
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+shift $((OPTIND-1)) ;
+# now $@ contains what was previously after the arguments processed by getopts
+
+DSTXFCE=$HOME/.config/xfce4/xfconf/xfce-perchannel-xml
+read -d '' XCFG <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="keyboard-layout" version="1.0">
+  <property name="Default" type="empty">
+    <property name="XkbDisable" type="bool" value="false"/>
+    <property name="XkbModel" type="string" value=""/>
+    <property name="XkbLayout" type="string" value="kt,kt,us"/>
+    <property name="XkbVariant" type="string" value="dev,txt,alt-intl"/>
+    <property name="XkbOptions" type="empty">
+      <property name="Group" type="string" value="grp:ctrls_toggle"/>
+      <property name="Compose" type="string" value="compose:102"/>
+    </property>
+  </property>
+</channel>
+EOF
+
+## XKB folder
+# older distros may use /etc/X11/xkb/ instead
+DSTXKB=$MNT/usr/share/X11/xkb ; #XKB output
+if test ! -d $DSTXKB
+then echo "XKB folder $DSTXKB does not exist, exiting." ; exit
+fi
+
+## Console output
+DSTC=$MNT/etc/default/console-setup ;
+uname -r | grep -q "^3\|^2.6.38" && DSTC=$MNT/etc/default/keyboard ; #new standard
+DSTC_fed=/etc/X11/xorg.conf.d/00-system-setup-keyboard.conf
+test -f $DSTC_fed && DSTC=$DSTC_fed
+DSTC_fed=/etc/X11/xorg.conf.d/00-keyboard.conf
+test -f $DSTC_fed && DSTC=$DSTC_fed   # Unused, we will use localectl instead
+if test ! -f $DSTC
+then echo "Config file $DSTC does not exist, exiting." ; exit
+fi
+
+## Rules name
+# given by first string of: > xprop -root _XKB_RULES_NAMES
+# for fedora:_XKB_RULES_NAMES(STRING) =.config/xfce4/xfconf/xfce-perchannel-xml "evdev", "pc105", "us,us", "euro,alt-intl", ""
+XMLN=$(xprop -root _XKB_RULES_NAMES | cut -d' ' -f3 | cut -b2- | rev | cut -b3- | rev)
+DXML="$DSTXKB/rules/$XMLN.xml"
+# eg Ubuntu 20: DXML=/usr/share/X11/xkb/rules/evdev.xml
+if test ! -f $DXML
+then echo "Rule file $DXML does not exist, exiting." ; exit
+fi
 
 DSTSYMB=$DSTXKB/symbols/$LAYOUT
 
@@ -141,11 +233,7 @@ sudo ln -s $SRC $DSTSYMB
 #sudo ln -s $PWD/kt.symbols /usr/share/X11/xkb/symbols/kt
 
 # Append layout info at the end of the layout list
-grep -q "<name>$LAYOUT<" "$DXML" || (
-  echo "Patching $DXML"
-  sudo cp "$DXML" "${DXML}_$(date +%F_%R).bkp"
-  sudo vim "$VIMRPL" "+wq" "$DXML"
-)
+$WORKDIR/kt_patch_evedex_xml.sh "$LAYOUT" "$DXML"
 
 if test -x /bin/localectl; then  # fedora
   # see: localectl list-x11-keymap-models, list-x11-keymap-layouts, list-x11-keymap-variants [LAYOUT], list-x11-keymap-options
@@ -154,10 +242,12 @@ else
   # Select layout for console / xkb? by appending to default file
   grep -q $LAYOUT $DSTC || (
     echo "Patching $DSTC" ;
-    echo 'XKBMODEL="pc105"
-  XKBLAYOUT="$LAYOUT,$LAYOUT,us"
-  XKBVARIANT="dev,txt,altgr-intl"
-  XKBOPTIONS="group(ctrls_toggle),terminate:ctrl_alt_bksp,lv3:ralt_switch"' \
+    #read -d '' NEWCFG <<EOF
+    echo "
+XKBMODEL=\"pc105\"
+XKBLAYOUT=\"$LAYOUT,$LAYOUT,us\"
+XKBVARIANT=\"dev,txt,altgr-intl\"
+XKBOPTIONS=\"group(ctrls_toggle),terminate:ctrl_alt_bksp,lv3:ralt_switch\"" \
     | sudo tee -a $DSTC ;
   )
 fi
@@ -166,7 +256,7 @@ if test -d $DSTXFCE; then
   echo $XCFG >> $DSTXFCE/keyboard-layout.xml
 fi
 
-if test -d ~/.zsh.after -a \! -f ~/.zsh.after/keymap.zsh                                        ⏎ ⬆ ✱
+if test -d ~/.zsh.after -a \! -f ~/.zsh.after/keymap.zsh
 then echo 'keymap() { setxkbmap -layout kt -variant ${1:-dev} -print -option | xkbcomp -dflts - $DISPLAY }' \
        > ~/.zsh.after/keymap.zsh
 fi

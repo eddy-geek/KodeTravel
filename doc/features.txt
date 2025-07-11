@@ -1,0 +1,21 @@
+* 2 variants exist for the number row
+  - the "text" one has all numbers directly accessible, as usual with qwerty
+  - the "dev" one has all symbols directly accessible, as azerty layouts
+  - but you only have to learn the symbol layout once
+* 
+* CapsLock is a second AltGr
+* Accented keys for most european languages are available with AltGr + letters.
+  The layout of the accents takes time to learn, though it is as
+  logical/symmetrical as possible:
+        ~ ` '" ^      ^ '" ` ~
+  [e]   Q W E  R T  Y U I  O P    [o]
+  [a]   A S D  F G  H J K  L      [i]
+  [u]     Z X  C V  B        N
+* Alternatively, many accents have dead keys. The ascii ones ( ' ` ~ ^ ) have the dead variant as AltGr+key
+* Supported languages:
+  full: french/spanish/portuguese/dutch/Welsh
+  full w/ dead keys: esperanto (^ŭ)
+  partial: norwegian (missing å); icelandic (ðþ ý)  hungarian (őű) Finnish ö Danish å Swedish å
+  missing: turkish, romanian, maori, Greek, Czech
+* Compose key: The additional key besides Left Shift on most european keyboards is set as Compose key.
+    key <...> { [  Multi_key ] };
