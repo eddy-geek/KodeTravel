@@ -125,3 +125,49 @@ case "$1" in
 	*)          kbdev ;;
 esac
 
+
+DSTSYMB=$DSTXKB/symbols/$LAYOUT
+
+export DXML VIMRPL DSTC
+
+echo -e " folder: $WORKDIR\n layout: $LAYOUT \n moving file: $SRC to: $DSTSYMB \n and changing: $DSTC \n and: $DXML"
+[ -n "$VERB" ] && echo " with vim command: $VIMRPL" # contains \r so no "-e"
+
+[ -n "$VERB" ] && set -o xtrace
+
+# Copy layout file
+sudo cp $SRC $DSTSYMB
+
+# Append layout info at the end of the layout list
+grep -q "<name>$LAYOUT<" "$DXML" || (
+  echo "Patching $DXML"
+  sudo cp "$DXML" "${DXML}_$(date +%F_%R).bkp"
+  sudo vim "$VIMRPL" "+wq" "$DXML"
+)
+
+if test -x /bin/localectl; then  # fedora
+  # see: localectl list-x11-keymap-models, list-x11-keymap-layouts, list-x11-keymap-variants [LAYOUT], list-x11-keymap-options
+  sudo localectl set-x11-keymap "$LAYOUT,us" "$VMAIN,altgr-intl" "group(ctrls_toggle),terminate:ctrl_alt_bksp,lv3:ralt_switch,compose:102"
+else
+  # Select layout for console / xkb? by appending to default file
+  grep -q $LAYOUT $DSTC || (
+    echo "Patching $DSTC" ;
+    echo 'XKBMODEL="pc105"
+  XKBLAYOUT="$LAYOUT,$LAYOUT,us"
+  XKBVARIANT="dev,txt,altgr-intl"
+  XKBOPTIONS="group(ctrls_toggle),terminate:ctrl_alt_bksp,lv3:ralt_switch"' \
+    | sudo tee -a $DSTC ;
+  )
+fi
+
+if test -d $DSTXFCE; then
+  echo $XCFG >> $DSTXFCE/keyboard-layout.xml
+fi
+
+if test -d ~/.zsh.after -a \! -f ~/.zsh.after/keymap.zsh                                        ⏎ ⬆ ✱
+then echo 'keymap() { setxkbmap -layout kt -variant ${1:-dev} -print -option | xkbcomp -dflts - $DISPLAY }' \
+       > ~/.zsh.after/keymap.zsh
+fi
+
+[ -n "$VERB" ] && set +o xtrace
+
