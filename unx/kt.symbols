@@ -54,7 +54,7 @@ xkb_symbols "accented_qwerty" {
 
 xkb_symbols "right_symbols" {
 
-    key <TLDE>	{ [  quotedbl,    asciitilde,    dead_grave,   dead_tilde ]	};
+    key <TLDE>	{ [     grave,    asciitilde,    dead_grave,   dead_tilde ]	};
 
     key <AE11>	{ [     minus,         grave,dead_diaeresis,   dead_grave ]	};
     key <AE12>	{ [ semicolon,   asciicircum,   dead_acute,dead_circumflex]	};
@@ -65,7 +65,7 @@ xkb_symbols "right_symbols" {
 
     key <AC10>	{ [     colon,        exclam,      ccedilla,     Ccedilla ]	};
     key <AC11>	{ [apostrophe,        dollar,      multiply,    0x1002715 ]	};
-    key <BKSL>	{ [ backslash,dead_diaeresis,     0x1002026,    0x1002713 ]	};
+    key <BKSL>	{ [  quotedbl,dead_diaeresis,     0x1002026,    0x1002713 ]	};
 
 };
 
@@ -171,7 +171,7 @@ xkb_symbols "toprow_symbols_us" {
 xkb_symbols "101_key" {
     key <AE01>	{ [           1, 1 ]	};
     key <AE02>	{ [           2, 2 ]	};
-    
+
 };
 
 xkb_symbols "other" {
@@ -227,7 +227,7 @@ xkb_symbols "dev" {
     key <LSGT>	{ type[Group1]="FOUR_LEVEL", [backslash,  plusminus, lessthanequal,  greaterthanequal ]	};
 
     // .. and on LG Gram 16T90R this br/jp key is right control
-    // replace 
+    // replace
     key <AB11> { [ Control_R, Control_R ] };
 
 //    key <TLDE>	{ [  quotedbl,        bar,      notsign,      notsign ] };
@@ -269,7 +269,7 @@ xkb_symbols "dev102" {
 
     include "kt(dev)"
 
-    //copy of key <TLDE>	
+    //copy of key <TLDE>
     key <AB10>	{ [ quotedbl, asciitilde, dead_belowdot, dead_abovedot]	};
     // ABNT-2 keyboard has this special key
     key <AB11>	{ [    slash,   question,  questiondown,    0x1007067 ]	};
@@ -293,7 +293,7 @@ xkb_symbols "us_nicer" {
 
     key <TLDE> {	[	quotedbl	  ,asciitilde, grave, dead_tilde ]	};
     key <AC11> {	[	apostrophe	  ,grave        ]       };
-    
+
     key <AE01> {	[	1 		  ,1		]	};
     key <AE02> {	[	backslash	  ,2, at	]	};
     key <AE03> {	[	numbersign	  ,3		]	};
