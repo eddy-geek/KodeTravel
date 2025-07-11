@@ -30,11 +30,11 @@ xkb_symbols "txt" {
     key <AE05>	{ [     5,     braceleft,      percent,     0x10025a1 ]	};// % □
     key <AE06>	{ [     6,    braceright,   underscore,        circle ]	};// ○ ¬
     key <AE07>	{ [     7,    underscore,    ampersand,     plusminus ]	};// & ±
-    key <AE08>	{ [     8,          plus,     division,      infinity ]	};// ÷ ∞
+    key <AE08>	{ [     8,      asterisk,     division,      infinity ]	};// ÷ ∞
     key <AE09>	{ [     9,         equal,    0x1002248,      notequal ]	};// ≈ ≠
     key <AE10>	{ [     0,             0,       degree,        oslash ]	};// ° ø
-    key <AE11>	{ [asterisk,       grave, dead_diaeresis,  dead_grave ]	};// ´ `
-    key <AE12>	{ [apostrophe,circumflex, dead_acute, dead_circumflex ]	};// ~ ^
+    key <AE11>	{ [ minus,         grave, dead_diaeresis,  dead_grave ]	};// ´ `
+    key <AE12>	{ [  plus,   asciicircum, dead_acute, dead_circumflex ]	};// ~ ^
 
     key <AD01>	{ [         q,   Q,       0x1007067,        0x10000b6 ]	};// 灧 ¶
     key <AD02>	{ [         w,   W,          egrave,       ediaeresis ]	};// è ë
@@ -58,11 +58,11 @@ xkb_symbols "txt" {
     key <AC07>	{ [         j,   J,     icircumflex,   dead_abovering ]	};// î ˚  
     key <AC08>	{ [         k,   K,          iacute,       idiaeresis ]	};
     key <AC09>	{ [         l,   L,               i,        masculine ]	};
-    key <AC10>	{ [     minus,  exclam,    ccedilla,         Ccedilla ]	};
-    key <AC11>	{ [     colon,  dollar,    multiply,        0x1002715 ]	};// × ✕
+    key <AC10>	{ [     colon,  exclam,    ccedilla,         Ccedilla ]	};
+    key <AC11>	{ [apostrophe,  dollar,    multiply,        0x1002715 ]	};// × ✕
     key <BKSL>	{ [ semicolon,      at,   0x1002026,        0x1002713 ]	};// … ✓
 
-    key <LSGT>	{ [apostrophe, bar,  lessthanequal,  greaterthanequal ]	};// ≤ ≥
+//    key <LSGT>	{ [apostrophe, bar,  lessthanequal,  greaterthanequal ]	};// ≤ ≥
     key <AB01>	{ [         z,   Z,            bar,leftdoublequotemark]	};// | “
     key <AB02>	{ [         x,   X,         ugrave,        udiaeresis ]	};// ù ü
     key <AB03>	{ [         c,   C,         uacute,         copyright ]	};// ú ©          
@@ -78,6 +78,7 @@ xkb_symbols "txt" {
     key <AB11>	{ [     slash,   question,       degree, questiondown ]	};
     //key <AB11>	{ [  quotedbl,   asciitilde ]	};
 
+    include "compose(102)"
     include "kpdl(dot)"
 
     //CapsLock as AltGr
@@ -109,8 +110,8 @@ xkb_symbols "dev" {
     key <AE04>	{ [   backslash, 4 ]	};
     key <AE05>	{ [   braceleft, 5 ]	};
     key <AE06>	{ [  braceright, 6 ]	};
-    key <AE07>	{ [   ampersand, 7 ]	};
-    key <AE08>	{ [        plus, 8 ]	};
+    key <AE07>	{ [  underscore, 7 ]	};
+    key <AE08>	{ [    asterisk, 8 ]	};
     key <AE09>	{ [       equal, 9 ]	};
 //    key <AE10>	{ [           0, 0 ]	};
 //    key <AE11>	{ [    asterisk,       grave, dead_acute, dead_grave      ]	};
